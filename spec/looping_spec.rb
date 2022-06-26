@@ -1,5 +1,41 @@
 require_relative 'spec_helper'
 require_relative '../looping'
+require 'pry'
+
+def happy_new_year
+  i=10
+  while i >= 1
+    puts i
+    i -= 1
+  end
+  puts 'Happy New Year!'
+end
+
+def fizzbuzz_printer
+  (1..100).each do |num|
+    if num % 3 == 0 && num % 5 != 0
+      puts 'Fizz'
+    elsif num % 3 != 0 && num % 5 == 0
+      puts 'Buzz'
+    elsif num % 3 == 0 && num % 5 == 0
+      puts 'FizzBuzz'
+    else
+      puts num
+    end
+  end
+end
+
+
+def reverse_string(string)
+  reverse_string = ''
+  # int = string.length
+  string.length.times do |i|
+    reverse_string = string[i] + reverse_string
+  end
+  reverse_string
+end
+
+puts(reverse_string('hello'))
 
 describe '#happy_new_year' do
 
